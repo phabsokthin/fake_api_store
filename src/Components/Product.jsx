@@ -1,11 +1,18 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { CartContext } from '../Contexts/CartContext';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const Product = ({ product }) => {
 
-    const {addTocart} = useContext(CartContext);
+    const { addTocart } = useContext(CartContext);
     const { id, image, category, title, price } = product;
+
+    const notifys = () => {
+        toast.success("Add to cart");
+    };
+
 
     return (
         <>
@@ -23,18 +30,16 @@ const Product = ({ product }) => {
                     <p className='text-1xl'>{title}</p>
                     <p className='font-bold text-red-500'>$ {price}</p>
                 </div>
-                <div onClick={()=> addTocart(product, id)}  className='flex justify-center'>
-                    <button className='bg-orange-500 px-4 p-2 text-white font-bold rounded-md hover:bg-orange-400 transtion-all duration-300'>Add To Cart</button>
+                <div onClick={notifys} className='flex justify-center'>
+                    <button onClick={() => addTocart(product, id)} className='bg-orange-500 px-4 p-2 text-white font-bold rounded-md hover:bg-orange-400 transtion-all duration-300'>Add To Cart</button>
                 </div>
                 <div className='flex justify-center mt-3'>
                     <Link to={`/product/${id}`}>
                         <button className='bg-blue-500 px-4 p-2 text-white font-bold rounded-md hover:bg-blue-400 transtion-all duration-300'>View Detail</button>
                     </Link>
                 </div>
-
-
             </div>
-
+        
         </>
     )
 }

@@ -2,10 +2,15 @@ import React, { useContext } from 'react'
 import {ProductContext} from '../Contexts/ProductContext'
 import Product from '../Components/Product'
 
+
 const Home = () => {
 
     const {products} = useContext(ProductContext)
     console.log(products)
+
+    // for toast
+
+
 
   return (
    <>
@@ -20,6 +25,8 @@ const Home = () => {
                     <Product product={product} key={product.id}/>
                 )
                })}
+
+            
             </div>
         </div>
     </section>

@@ -10,6 +10,8 @@ const CardItem = ({ item }) => {
 
   const { id, image, title, price, amount} = item;
 
+  //toast
+
   return (
     <>
 
@@ -36,8 +38,8 @@ const CardItem = ({ item }) => {
                   <div>
                     <p>{amount}</p>
                   </div>
-                  <div onClick={()=> increaseAmount(id)} className='cursor-pointer'>
-                    <AiOutlinePlus />
+                  <div className='cursor-pointer'>
+                    <AiOutlinePlus  onClick={()=> increaseAmount(id)} />
                   </div>
                 </div>
                 <div>

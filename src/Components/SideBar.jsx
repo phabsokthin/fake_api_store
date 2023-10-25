@@ -16,8 +16,10 @@ const SideBar = () => {
 
     return (
         <>
+        <section className={`${isOpen ? "w-full": "-right-0"}  h-full bg-gray-800/40 fixed z-10 top-0 transition-all duration-500 `}>
             {/* {cart.length > 0 ? ()} */}
-            <div className={`${isOpen ? "right-0" : "-right-full"} w-full h-full  fixed z-10 bg-white shadow-2xl top-0  md:w-[70%] lg:w-[40%] xl:w-[30%] transition-all duration-300`}>
+            <div className={`${isOpen ? "right-0" : "-right-full"} w-full h-full  fixed z-10 bg-white shadow-2xl top-0  md:w-[70%] lg:w-[40%] xl:w-[30%] transition-all duration-250 ease-in-out`}>
+
                 <div className='flex justify-between items-center p-5 border-b'>
                     <div>
                         <p>YOUR SHOPPING CART IS ({itemAmount}) </p>
@@ -63,7 +65,7 @@ const SideBar = () => {
 
 
 
-
+            </section>
         </>
     )
 }
